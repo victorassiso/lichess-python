@@ -10,7 +10,10 @@ def get_user_rating_history(username: str, perfType: str):
   try:
     response = requests.get(f"https://lichess.org/api/user/{username}/rating-history")
     data = response.json()
+    
+    # Find the rating history for the specified perfType
     ratings = next((item for item in data if item['name'] == perfType), None)
+    
     return ratings
   except requests.exceptions.RequestException as error:
     print(f"Request failed: {error}")
