@@ -1,6 +1,6 @@
 from datetime import date, timedelta
-from http.get_one_leaderboard import get_one_leaderboard
-from http.get_user_rating_history import get_user_rating_history
+from api.get_one_leaderboard import get_one_leaderboard
+from api.get_user_rating_history import get_user_rating_history
 
 def get_player_last_30_days_rating_history(username: str):  
   # Get player full rating history for classical chess

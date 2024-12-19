@@ -1,4 +1,4 @@
-from http.get_one_leaderboard import get_one_leaderboard
+from api.get_one_leaderboard import get_one_leaderboard
 
 def print_top_50_classical_players():
   top_50_players = get_one_leaderboard(50, 'classical')

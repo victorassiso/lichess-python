@@ -1,5 +1,6 @@
+import os
 from utils.write_csv_file import write_csv_file
-from http.get_one_leaderboard import get_one_leaderboard
+from api.get_one_leaderboard import get_one_leaderboard
 from use_cases.last_30_days_rating_history import get_player_last_30_days_rating_history
 
 def generate_rating_csv_for_top_50_classical_players():
@@ -22,7 +23,8 @@ def generate_rating_csv_for_top_50_classical_players():
     })
   
   # Write the list to a CSV file
-  output_path = '../data/output.csv'
+  current_dir = os.path.dirname(__file__)
+  output_path = os.path.join(current_dir, '../data/output.csv')
   write_csv_file(output_path, top_50_players_last_30_days_rating_history)
 
   print(f"Top 50 players rating history for the last 30 days: File generated at {output_path}")
